@@ -2,14 +2,13 @@ package com.delta.leadershipmun;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import java.util.HashMap;
 
 public class JoinUsActivity extends AppCompatActivity {
 
@@ -23,7 +22,7 @@ public class JoinUsActivity extends AppCompatActivity {
 
         fullName = (EditText)findViewById(R.id.fullName);
         email = (EditText)findViewById(R.id.email);
-        motivation = (EditText)findViewById(R.id.motivation);
+        motivation = (EditText)findViewById(R.id.fldSuggestion);
         munOtherSpecification = (EditText)findViewById(R.id.munOtherSpecification);
         munImpact = (CheckBox)findViewById(R.id.munImpact);
         munBilbao = (CheckBox)findViewById(R.id.munBilbao);
@@ -42,7 +41,7 @@ public class JoinUsActivity extends AppCompatActivity {
         }
     }
 
-    public void Submit(View v){
+    public void SubmitJobApplication(View v){
 
         boolean formIsNotComplete = false;
 
@@ -75,14 +74,15 @@ public class JoinUsActivity extends AppCompatActivity {
             Toast.makeText(this, "All fields must be filled", Toast.LENGTH_LONG).show();
         } else{
             sendMail();
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
         }
 
 
     }
 
-    private boolean sendMail(){
+    private void sendMail(){
 
-        boolean emailSentSuccess = false;
 
         String otherMUNspecification = munOtherSpecification.getText().toString();
 
@@ -107,9 +107,5 @@ public class JoinUsActivity extends AppCompatActivity {
         JavaMailAPI javaMailAPI = new JavaMailAPI(this, mail, subject, message);
 
         javaMailAPI.execute();
-
-        emailSentSuccess = true;
-
-        return emailSentSuccess;
     }
 }

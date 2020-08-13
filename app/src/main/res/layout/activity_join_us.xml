@@ -45,7 +45,7 @@
                 android:inputType="textEmailAddress" />
 
             <EditText
-                android:id="@+id/motivation"
+                android:id="@+id/fldSuggestion"
                 android:layout_width="600dp"
                 android:layout_height="150dp"
                 android:layout_centerHorizontal="true"
@@ -147,7 +147,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="710dp"
-                android:onClick="Submit"
+                android:onClick="SubmitJobApplication"
                 android:text="Submit" />
 
         </RelativeLayout>

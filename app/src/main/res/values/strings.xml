@@ -1,4 +1,15 @@
 <resources>
-    <string name="app_name">Leadership MUN</string>
-    <string name="number_of_items">8 items</string>
+    <string name="app_name">Synergy Network</string>
+    <string name="aboutUs">About Us</string>
+    <string name="events">Events</string>
+    <string name="newsfeed">Newsfeed</string>
+    <string name="collaborations">Collaborations</string>
+    <string name="shopping">Shopping</string>
+    <string name="joinUs">Join our Team</string>
+    <string name="suggestionBox">Suggestion Box</string>
+    
+    <string name="staff">Staff</string>
+    <string name="staff_detailed">Team members, pics\n descriptions...</string>
+    <string name="core_values">Core Values</string>
+    <string name="core_values_detailed">Our visions, goals\n and dynamics</string>
 </resources>
