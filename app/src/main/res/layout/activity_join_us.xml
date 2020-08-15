@@ -145,10 +145,14 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/munOtherSpecification"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="710dp"
+                android:layout_marginTop="44dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/submit_button"
                 android:onClick="SubmitJobApplication"
-                android:text="Submit" />
+                android:text="Submit"
+                android:textColor="@color/magenta" />
 
         </RelativeLayout>
     </LinearLayout>
