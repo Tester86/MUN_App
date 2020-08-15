@@ -12,19 +12,16 @@ import androidx.viewpager.widget.PagerAdapter;
 public class ViewPagerAdapter extends PagerAdapter {
 
     private Context mContext;
-    private int[] imageIds = new int[] {R.drawable.bee_image,
-    R.drawable.cello_image,
-    R.drawable.lion_image,
-    R.drawable.pumpkin_image,
-    R.drawable.watch_image};
+    private int[] mImageIds;
 
-    ViewPagerAdapter(Context context){
+    ViewPagerAdapter(Context context, int[] imageIds){
         mContext = context;
+        mImageIds = imageIds;
 
     }
     @Override
     public int getCount() {
-        return imageIds.length;
+        return mImageIds.length;
     }
 
     @Override
@@ -37,7 +34,7 @@ public class ViewPagerAdapter extends PagerAdapter {
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         ImageView imageView = new ImageView(mContext);
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        imageView.setImageResource(imageIds[position]);
+        imageView.setImageResource(mImageIds[position]);
         container.addView(imageView, 0);
         return imageView;
     }

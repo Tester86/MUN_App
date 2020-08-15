@@ -44,4 +44,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AboutUsActivity.class);
         startActivity(intent);
     }
+
+    public void OnClickCollaborations(View v){
+        Intent intent = new Intent(this, CollaborationsActivity.class);
+        startActivity(intent);
+    }
 }
