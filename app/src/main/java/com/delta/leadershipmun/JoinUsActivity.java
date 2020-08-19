@@ -93,7 +93,7 @@ public class JoinUsActivity extends AppCompatActivity {
         if(!otherMUNspecification.equals("")){
             if(conferencesAttended.equals("")){
                 conferencesAttended += otherMUNspecification;
-            } else conferencesAttended += "\n-" + otherMUNspecification;
+            } else conferencesAttended += "\n- " + otherMUNspecification;
         }
 
         String mail = SensitiveInfo.EMAIL;
