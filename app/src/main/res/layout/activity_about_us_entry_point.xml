@@ -16,7 +16,7 @@
         android:id="@+id/constraintLayout"
         android:background="@color/colorPrimaryDark"
         android:layout_width="0dp"
-        app:layout_constraintWidth_percent="0.5"
+        app:layout_constraintWidth_percent="0.55"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
@@ -70,13 +70,15 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/core_values"
+            android:text="@string/foundation_principles"
             android:textColor="@color/white"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.499"
+            />
 
         <TextView
             android:id="@+id/textView5"

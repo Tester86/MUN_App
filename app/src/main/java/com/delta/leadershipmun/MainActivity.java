@@ -49,4 +49,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CollaborationsActivity.class);
         startActivity(intent);
     }
+
+    public void OnClickShopping(View v){
+        Intent intent = new Intent(this, ShoppingActivity.class);
+        startActivity(intent);
+    }
 }

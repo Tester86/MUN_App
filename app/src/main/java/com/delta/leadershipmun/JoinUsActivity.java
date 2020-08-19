@@ -87,13 +87,13 @@ public class JoinUsActivity extends AppCompatActivity {
         String otherMUNspecification = munOtherSpecification.getText().toString();
 
         String conferencesAttended = "";
-        if(munImpact.isChecked()) conferencesAttended += "MUN Impact";
-        if(munBilbao.isChecked()) conferencesAttended += ", MUN Bilbao";
-        if(royalRussel.isChecked()) conferencesAttended += ", Royal Russel";
+        if(munImpact.isChecked()) conferencesAttended += "\n- MUN Impact";
+        if(munBilbao.isChecked()) conferencesAttended += "\n- MUN Bilbao";
+        if(royalRussel.isChecked()) conferencesAttended += "\n- Royal Russel";
         if(!otherMUNspecification.equals("")){
             if(conferencesAttended.equals("")){
                 conferencesAttended += otherMUNspecification;
-            } else conferencesAttended += ", " + otherMUNspecification;
+            } else conferencesAttended += "\n-" + otherMUNspecification;
         }
 
         String mail = SensitiveInfo.EMAIL;

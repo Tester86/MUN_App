@@ -29,7 +29,8 @@
                 android:layout_marginEnd="97dp"
                 android:ems="10"
                 android:hint="Full Name"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textColor="@color/black"/>
 
             <EditText
                 android:id="@+id/email"
@@ -42,7 +43,8 @@
                 android:layout_marginEnd="97dp"
                 android:ems="10"
                 android:hint="user@gmail.com"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:textColor="@color/black"/>
 
             <EditText
                 android:id="@+id/fldSuggestion"
@@ -56,7 +58,8 @@
                 android:layout_marginEnd="10dp"
                 android:ems="10"
                 android:hint="Why are you interested in working with us?"
-                android:inputType="textMultiLine" />
+                android:inputType="textMultiLine"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -82,7 +85,8 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="437dp"
                 android:layout_marginStart="129dp"
-                android:text="MUN Impact" />
+                android:text="MUN Impact"
+                android:textColor="@color/black"/>
 
             <CheckBox
                 android:id="@+id/munBilbao"
@@ -98,7 +102,8 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="477dp"
                 android:layout_marginStart="129dp"
-                android:text="MUN Bilbao" />
+                android:text="MUN Bilbao"
+                android:textColor="@color/black"/>
 
             <CheckBox
                 android:id="@+id/royalRussel"
@@ -114,7 +119,8 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="517dp"
                 android:layout_marginStart="129dp"
-                android:text="Royal Russel" />
+                android:text="Royal Russel"
+                android:textColor="@color/black"/>
 
             <CheckBox
                 android:id="@+id/munOther"
@@ -131,16 +137,20 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="557dp"
                 android:layout_marginStart="129dp"
-                android:text="Other (please specify)" />
+                android:text="Other (please specify)"
+                android:textColor="@color/black"/>
 
             <EditText
                 android:id="@+id/munOtherSpecification"
-                android:hint="What other MUN conferences have you attended?"
                 android:layout_width="300dp"
-                android:layout_centerHorizontal="true"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="600dp"
-                android:visibility="invisible"/>
+                android:layout_below="@+id/munOther"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="18dp"
+
+                android:hint="What other MUN conferences have you attended?"
+                android:visibility="invisible"
+                android:textColor="@color/black"/>
 
             <Button
                 android:layout_width="wrap_content"
