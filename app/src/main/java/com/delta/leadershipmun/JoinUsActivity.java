@@ -29,8 +29,6 @@ public class JoinUsActivity extends AppCompatActivity {
         royalRussel = (CheckBox)findViewById(R.id.royalRussel);
         other = (CheckBox)findViewById(R.id.munOther);
 
-
-
     }
 
     public void toggleOtherEditText(View v){
@@ -107,5 +105,7 @@ public class JoinUsActivity extends AppCompatActivity {
         JavaMailAPI javaMailAPI = new JavaMailAPI(this, mail, subject, message);
 
         javaMailAPI.execute();
+
+        Toast.makeText(this, "Submitted", Toast.LENGTH_LONG).show();
     }
 }

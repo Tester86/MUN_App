@@ -1,4 +1,6 @@
 <resources>
+
+    <!-- Main Menu -->
     <string name="app_name">Synergy Network</string>
     <string name="aboutUs">About Us</string>
     <string name="events">Events</string>
@@ -8,8 +10,33 @@
     <string name="joinUs">Join our Team</string>
     <string name="suggestionBox">Suggestion Box</string>
 
+    <!-- About Us entry point -->
     <string name="staff">Staff</string>
     <string name="staff_detailed">Team members, pics\n descriptions...</string>
     <string name="foundation_principles">Foundation\n Principles</string>
     <string name="core_values_detailed">Our visions, goals\n and dynamics</string>
+
+    <!-- Collaborations entry point -->
+    <string name="become_a_partner_label">Become a partner!</string>
+    <string name="become_an_associate_label">Become an associate!</string>
+
+    <!-- Common Forms Fields -->
+    <string name="full_name_hint">Full Name</string>
+    <string name="gmail_hint">example@gmail.com</string>
+
+    <!-- Join Us Form Fields -->
+    <string name="motivation_text">Why are you interested in working with us?</string>
+    <string name="conferences_attended_label">Which of these conferences have you attended?</string>
+    <string name="mun_impact">MUN Impact</string>
+    <string name="mun_bilbao">MUN Bilbao</string>
+    <string name="royal_russel">Royal Russel</string>
+    <string name="other_conference_attended">Other</string>
+
+    <!-- Suggestion Box Form Fields -->
+    <string name="suggestion_label">Feel free to propose new features anonymously</string>
+    <string name="suggestion_hint">I suggest...</string>
+
+    <!-- Buttons -->
+    <string name="btn_submit">Submit</string>
+
 </resources>
