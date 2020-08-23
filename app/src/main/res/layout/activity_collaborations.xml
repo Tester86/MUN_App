@@ -30,8 +30,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:text="Become a partner!"
-        android:onClick="becomePartner"
+        android:id="@+id/btnWorkWithUs"
+        android:text="Work with us"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/oval_button"

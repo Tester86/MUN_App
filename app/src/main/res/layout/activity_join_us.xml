@@ -46,7 +46,18 @@
                 android:inputType="textEmailAddress"
                 android:textColor="@color/black"/>
 
+            <TextView
+                android:layout_marginTop="199dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1. Why are you interested in working\n                       with us?"
+                android:textSize="21sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_centerHorizontal="true" />
+
             <EditText
+                android:layout_marginTop="269dp"
                 android:id="@+id/fldSuggestion"
                 android:layout_width="600dp"
                 android:layout_height="150dp"
@@ -54,7 +65,6 @@
                 android:gravity="top"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="191dp"
                 android:layout_marginEnd="10dp"
                 android:ems="10"
                 android:hint="@string/motivation_text"
@@ -62,83 +72,59 @@
                 android:textColor="@color/black"/>
 
             <TextView
+                android:layout_marginTop="469dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="380dp"
+                android:text="2. WHich of these conferences have\n                 you attended?"
+                android:textSize="21sp"
                 android:textStyle="bold"
-                android:text="@string/conferences_attended_label" />
+                android:textColor="@color/black"
+                android:layout_centerHorizontal="true" />
 
             <CheckBox
                 android:id="@+id/munImpact"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="430dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="437dp"
-                android:layout_marginStart="129dp"
-                android:text="@string/mun_impact"
-                android:textColor="@color/black"/>
-
-            <CheckBox
-                android:id="@+id/munBilbao"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="470dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="477dp"
-                android:layout_marginStart="129dp"
-                android:text="@string/mun_bilbao"
-                android:textColor="@color/black"/>
-
-            <CheckBox
-                android:id="@+id/royalRussel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="510dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="517dp"
-                android:layout_marginStart="129dp"
-                android:text="@string/royal_russel"
-                android:textColor="@color/black"/>
-
-            <CheckBox
-                android:id="@+id/munOther"
+                android:text="MUN Impact"
+                android:textSize="20sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="80dp"
                 android:layout_marginTop="550dp"
-                android:onClick="toggleOtherEditText" />
+                android:layout_centerHorizontal="true"/>
 
-            <TextView
+            <CheckBox
+                android:id="@+id/munBilbao"
+                android:text="MUN Bilbao"
+                android:textSize="20sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="557dp"
-                android:layout_marginStart="129dp"
-                android:text="@string/other_conference_attended"
-                android:textColor="@color/black"/>
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="580dp"
+                android:layout_centerHorizontal="true"/>
+
+            <CheckBox
+                android:id="@+id/royalRussel"
+                android:text="Royal Russel"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="610dp"
+                android:layout_centerHorizontal="true"/>
+
+            <CheckBox
+                android:id="@+id/munOther"
+                android:text="Other"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="640dp"
+                android:onClick="toggleOtherEditText"
+                android:layout_centerHorizontal="true"/>
 
             <EditText
                 android:id="@+id/munOtherSpecification"
@@ -146,8 +132,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/munOther"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="18dp"
-
+                android:layout_marginTop="30dp"
                 android:hint="What other MUN conferences have you attended?"
                 android:visibility="invisible"
                 android:textColor="@color/black"/>

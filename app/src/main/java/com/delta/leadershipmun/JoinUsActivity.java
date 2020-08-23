@@ -105,7 +105,5 @@ public class JoinUsActivity extends AppCompatActivity {
         JavaMailAPI javaMailAPI = new JavaMailAPI(this, mail, subject, message);
 
         javaMailAPI.execute();
-
-        Toast.makeText(this, "Submitted", Toast.LENGTH_LONG).show();
     }
 }

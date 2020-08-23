@@ -19,7 +19,7 @@
             android:layout_marginRight="20dp">
 
             <EditText
-                android:id="@+id/organizationName"
+                android:id="@+id/organizationNamePartnership"
                 android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
                 android:textColor="@color/black"/>
 
             <EditText
-                android:id="@+id/directorName"
+                android:id="@+id/directorNamePartnership"
                 android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
                 android:textColor="@color/black"/>
 
             <EditText
-                android:id="@+id/directorEmail"
+                android:id="@+id/directorEmailPartnership"
                 android:inputType="textEmailAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -89,11 +89,11 @@
                     android:textSize="20sp"
                     android:text="Business" />
                 <RadioButton
-                    android:id="@+id/governamentalAgencyOption"
+                    android:id="@+id/governmentalAgencyOption"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:text="Governamental Agency" />
+                    android:text="Governmental Agency" />
 
             </RadioGroup>
 

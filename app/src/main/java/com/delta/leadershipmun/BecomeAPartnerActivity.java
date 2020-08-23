@@ -15,7 +15,7 @@ public class BecomeAPartnerActivity extends AppCompatActivity {
     private EditText organizationName, directorName, directorEmail, interestFromPartnership,
                     ourProfitFromPartnership, ideasForPartnership;
 
-    private RadioButton ngoOption, businessOption, governamentalAgencyOption,
+    private RadioButton ngoOption, businessOption, governmentalAgencyOption,
                     workshopOption, podcastOption, presentationOption,
                     oneTimePartnershipOption, longLastingConferenceOption;
 
@@ -25,9 +25,9 @@ public class BecomeAPartnerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_become_a_partner);
 
         // Form's EditText elements
-        organizationName = (EditText)findViewById(R.id.organizationName);
-        directorName = (EditText)findViewById(R.id.directorName);
-        directorEmail = (EditText)findViewById(R.id.directorEmail);
+        organizationName = (EditText)findViewById(R.id.organizationNamePartnership);
+        directorName = (EditText)findViewById(R.id.directorNamePartnership);
+        directorEmail = (EditText)findViewById(R.id.directorEmailPartnership);
         interestFromPartnership = (EditText)findViewById(R.id.interestFromPartnership);
         ourProfitFromPartnership = (EditText)findViewById(R.id.ourProfitFromPartnership);
         ideasForPartnership = (EditText)findViewById(R.id.ideasForPartnership);
@@ -35,7 +35,7 @@ public class BecomeAPartnerActivity extends AppCompatActivity {
         // Form's RadioButton elements
         ngoOption = (RadioButton) findViewById(R.id.ngoOption);
         businessOption = (RadioButton) findViewById(R.id.businessOption);
-        governamentalAgencyOption = (RadioButton) findViewById(R.id.governamentalAgencyOption);
+        governmentalAgencyOption = (RadioButton) findViewById(R.id.governmentalAgencyOption);
         workshopOption = (RadioButton) findViewById(R.id.workshopOption);
         podcastOption = (RadioButton) findViewById(R.id.podcastOption);
         presentationOption = (RadioButton) findViewById(R.id.presentationOption);
@@ -57,33 +57,33 @@ public class BecomeAPartnerActivity extends AppCompatActivity {
                             ourProfitFromPartnership.getText().toString(),
                             ideasForPartnership.getText().toString()};
 
-        RadioButton[] organizationType = {ngoOption, businessOption, governamentalAgencyOption};
+        RadioButton[] organizationType = {ngoOption, businessOption, governmentalAgencyOption};
         RadioButton[] partnershipType = {workshopOption, podcastOption, presentationOption};
         RadioButton[] partnershipDuration = {oneTimePartnershipOption, longLastingConferenceOption};
 
         for(int i = 0; i < 3; i++){
-            if(organizationData[i] == "" || profits[i] == ""){
+            if(organizationData[i].equals("") || profits[i].equals("")){
                 formIsNotComplete = true;
                 break;
             }
         }
 
         for(RadioButton rBtn : organizationType){
-            if(rBtn.isChecked()){
+            if(rBtn.isChecked() && !formIsNotComplete){
                 formIsNotComplete = false;
                 break;
             } else formIsNotComplete = true;
         }
 
         for(RadioButton rBtn : partnershipType){
-            if(rBtn.isChecked()){
+            if(rBtn.isChecked() && !formIsNotComplete){
                 formIsNotComplete = false;
                 break;
             } else formIsNotComplete = true;
         }
 
         for(RadioButton rBtn : partnershipDuration){
-            if(rBtn.isChecked()){
+            if(rBtn.isChecked() && !formIsNotComplete){
                 formIsNotComplete = false;
                 break;
             } else formIsNotComplete = true;
@@ -117,22 +117,25 @@ public class BecomeAPartnerActivity extends AppCompatActivity {
         String subject = "Partnership Request";
         String mail = SensitiveInfo.EMAIL;
 
-        String message = "Organization Name: " + organizationName.getText().toString()
+        String message = "====== Miscellaneous Data ======"
+                + "\n\nOrganization Name: " + organizationName.getText().toString()
                 + "\nDirector's Name: " + directorName.getText().toString()
                 + "\nDirector's Email: " + directorEmail.getText().toString()
+
+                + "\n\n====== Info about the Entity ======"
 
                 + "\n\nEntity Type: " + entityType
                 + "\nPartnership type: " + partnershipType
                 + "\nPartnership Duration: " + partnershipDuration
 
-                + "\n\nWhy do you want to partner with us?: " + interestFromPartnership.getText().toString()
-                + "\nWhat can we benefit from this partnership? " + ourProfitFromPartnership.getText().toString()
-                + "\nIdeas for the partnership: " + ideasForPartnership.getText().toString();
+                + "\n\n====== Detailed Info ======"
+
+                + "\n\n        1. Why they want to partner with us:\n\n" + interestFromPartnership.getText().toString()
+                + "\n\n        2. Our possible benefit from this partnership:\n\n" + ourProfitFromPartnership.getText().toString()
+                + "\n\n        3. Ideas for the partnership:\n\n" + ideasForPartnership.getText().toString();
 
         JavaMailAPI javaMailAPI = new JavaMailAPI(this, mail, subject, message);
         javaMailAPI.execute();
-
-        Toast.makeText(this, "Submitted", Toast.LENGTH_LONG).show();
 
     }
 }
