@@ -135,7 +135,8 @@
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
+                app:cardElevation="6dp"
+                android:onClick="OnClickNewsfeed" >
 
                 <LinearLayout
                     android:layout_width="wrap_content"

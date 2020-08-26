@@ -2,16 +2,19 @@ package com.delta.leadershipmun;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.ArgbEvaluator;
+import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 public class SuggestionBoxActivity extends AppCompatActivity {
 
     private EditText fldSuggestion;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

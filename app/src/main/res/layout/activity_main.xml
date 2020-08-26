@@ -74,8 +74,7 @@
                     android:gravity="center"
                     android:orientation="vertical"
                     android:layout_gravity="center"
-                    android:padding="16dp"
-                    >
+                    android:padding="16dp" >
 
                     <ImageView
                         android:layout_width="80dp"
@@ -94,7 +93,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/workshops"
+                android:id="@+id/events"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"

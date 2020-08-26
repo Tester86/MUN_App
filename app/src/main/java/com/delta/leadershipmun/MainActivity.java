@@ -54,4 +54,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ShoppingActivity.class);
         startActivity(intent);
     }
+
+    public void OnClickNewsfeed(View v){
+        Intent intent = new Intent(this, NewsfeedActivity.class);
+        startActivity(intent);
+    }
 }
