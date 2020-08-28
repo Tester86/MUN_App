@@ -55,29 +55,23 @@ public class NewsfeedActivity extends AppCompatActivity {
 
 
             String url = "https://www.nytimes.com/es/";
-            Document doc = null;
+            Document doc;
             try {
                 doc = Jsoup.connect(url).get();
+                Elements data = doc.select("ol.css-11jjg.ekkqrpp2");
+
+                for(int i = 0; i < data.size(); i++){
+
+                    String title = data.select("h2.css-l2vidh.e4e4i5l1")
+                            .select("a")
+                            .eq(i)
+                            .text();
+
+                    if(!title.equals("")) parseItems.add(new ParseItem(title));
+                }
+
             } catch (IOException e) {
                 e.printStackTrace();
-            }
-
-            Elements data = doc.select("li.css-1rkr7ss.ekkqrpp3");
-
-
-
-            for(int i = 0; i < data.size(); i++){
-                String imgUrl = data.select("li.css-1rkr7ss.ekkqrpp3")
-                        .select("img")
-                        .eq(i)
-                        .attr("src");
-
-                String title = data.select("h2.css-l2vidh.e4e4i5l1")
-                        .select("a")
-                        .eq(i)
-                        .text();
-
-                parseItems.add(new ParseItem(imgUrl, title));
             }
 
             return null;

@@ -36,7 +36,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         ParseItem parseItem = parseItems.get(position);
         holder.textView.setText(parseItem.getTitle());
-        Picasso.get().load(parseItem.getImgUrl()).into(holder.imageView);
 
     }
 
@@ -47,13 +46,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        ImageView imageView;
         TextView textView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            imageView = itemView.findViewById(R.id.newsImage);
             textView = itemView.findViewById(R.id.newsTitle);
         }
     }

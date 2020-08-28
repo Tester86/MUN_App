@@ -2,26 +2,16 @@ package com.delta.leadershipmun;
 
 public class ParseItem {
 
-    private String imgUrl;
     private String title;
 
     public ParseItem() {}
 
-    public ParseItem(String imgUrl, String title) {
-        this.imgUrl = imgUrl;
+    public ParseItem(String title) {
         this.title = title;
-    }
-
-    public String getImgUrl() {
-        return imgUrl;
     }
 
     public String getTitle() {
         return title;
-    }
-
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
     }
 
     public void setTitle(String title) {
