@@ -1,11 +1,8 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'com.google.gms.google-services'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
-    dataBinding {
-        enabled = true
-    }
 
     defaultConfig {
         applicationId "com.delta.leadershipmun"
@@ -35,8 +32,9 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.google.firebase:firebase-analytics:17.5.0'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation files("libs/activation.jar")
     implementation files("libs/additional.jar")
@@ -44,6 +42,9 @@ dependencies {
     implementation 'com.razorpay:checkout:1.5.16'
     implementation 'org.jsoup:jsoup:1.13.1'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.google.firebase:firebase-storage:19.1.1'
+    implementation 'com.google.firebase:firebase-auth:19.3.2'
+    implementation 'com.google.firebase:firebase-database:19.3.1'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
