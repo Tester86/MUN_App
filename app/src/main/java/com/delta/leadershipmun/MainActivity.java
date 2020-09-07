@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.razorpay.Checkout;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,6 +18,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Checkout c = new Checkout();
+        c.setKeyID("rzp_test_pNWsybFXTJ1FTP");
+        Checkout.preload(getApplicationContext());
 
         // Linking visual to logic part
         newsfeed = (CardView) findViewById(R.id.newsfeed);
@@ -32,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void OnClickJoinUs(View v) {
         Intent intent = new Intent(this, JoinUsActivity.class);
+        intent.putExtra("example", "exampleString");
         startActivity(intent);
     }
 

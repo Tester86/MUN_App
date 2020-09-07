@@ -19,17 +19,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FirebaseImageActivity"></activity>
-        <activity android:name=".NewsfeedActivity" />
-        <activity android:name=".BecomeAnAssociateActivity" />
-        <activity android:name=".BecomeAPartnerActivity" />
-        <activity android:name=".ShoppingActivity" />
-        <activity android:name=".CollaborationsActivity" />
+        <activity android:name=".FoundingPrinciplesDetailedTemplateActivity"></activity>
+        <activity
+            android:name=".NewsfeedActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BecomeAnAssociateActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BecomeAPartnerActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ShoppingActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CollaborationsActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".AboutUsActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
-        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SuggestionBoxActivity"
             android:configChanges="orientation"

@@ -12,9 +12,9 @@
 
     <!-- About Us entry point -->
     <string name="staff">Staff</string>
-    <string name="staff_detailed">Team members, pics\n descriptions...</string>
-    <string name="foundation_principles">Foundation\n Principles</string>
-    <string name="core_values_detailed">Our visions, goals\n and dynamics</string>
+    <string name="staff_detailed">Team members, pics\ndescriptions…</string>
+    <string name="foundation_principles">Founding\nPrinciples</string>
+    <string name="core_values_detailed">Our visions, goals\nand dynamics</string>
 
     <!-- Collaborations entry point -->
     <string name="become_a_partner_label">Become a partner!</string>
@@ -35,6 +35,14 @@
     <!-- Suggestion Box Form Fields -->
     <string name="suggestion_label">Feel free to propose new features anonymously</string>
     <string name="suggestion_hint">I suggest...</string>
+
+    <!-- Foundation Principles -->
+    <string name="vision_statement">\tSynergy Network International aspires to be the <b>consolidation</b> of global youth
+<b>leadership</b> and <b>potential</b>.\n\n\tOur vision is to be a center for the empowerment of youth voices
+through a network of young leaders, each supporting one another in one common bond: to
+change the world.\n\n\tThis change will come through every resource, piece of advice, and initiative
+shared by our members as priceless passion is exchanged and strengthened throughout our
+platform for impact. We are the youth <b>foundation</b> for <b>change</b>, <b>progress</b>, and <b>success.</b></string>
 
     <!-- Buttons -->
     <string name="btn_submit">Submit</string>

@@ -29,6 +29,10 @@ public class JoinUsActivity extends AppCompatActivity {
         royalRussel = (CheckBox)findViewById(R.id.royalRussel);
         other = (CheckBox)findViewById(R.id.munOther);
 
+        Intent intent = getIntent();
+        String intentString = intent.getStringExtra("example");
+        fullName.setText(intentString);
+
     }
 
     public void toggleOtherEditText(View v){
@@ -80,7 +84,6 @@ public class JoinUsActivity extends AppCompatActivity {
     }
 
     private void sendMail(){
-
 
         String otherMUNspecification = munOtherSpecification.getText().toString();
 

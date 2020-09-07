@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,9 +7,9 @@
     tools:context=".JoinUsActivity">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -20,113 +19,113 @@
 
             <EditText
                 android:id="@+id/fullName"
-                android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="97dp"
                 android:ems="10"
                 android:hint="@string/full_name_hint"
                 android:inputType="textPersonName"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/email"
-                android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="110dp"
                 android:layout_marginEnd="97dp"
                 android:ems="10"
                 android:hint="@string/gmail_hint"
                 android:inputType="textEmailAddress"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
 
             <TextView
-                android:layout_marginTop="199dp"
-                android:gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="199dp"
+                android:gravity="center"
                 android:text="1. Why are you interested in working with us?"
-                android:textSize="21sp"
-                android:textStyle="bold"
                 android:textColor="@color/black"
-                android:layout_centerHorizontal="true" />
+                android:textSize="21sp"
+                android:textStyle="bold" />
 
             <EditText
-                android:layout_marginTop="269dp"
                 android:id="@+id/fldSuggestion"
                 android:layout_width="600dp"
                 android:layout_height="150dp"
-                android:layout_centerHorizontal="true"
-                android:gravity="top"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="269dp"
                 android:layout_marginEnd="10dp"
                 android:ems="10"
+                android:gravity="top"
                 android:hint="@string/motivation_text"
                 android:inputType="textMultiLine"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
 
             <TextView
-                android:layout_marginTop="469dp"
-                android:gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="469dp"
+                android:gravity="center"
                 android:text="2. Which of these conferences have you attended?"
-                android:textSize="21sp"
-                android:textStyle="bold"
                 android:textColor="@color/black"
-                android:layout_centerHorizontal="true" />
+                android:textSize="21sp"
+                android:textStyle="bold" />
 
             <CheckBox
                 android:id="@+id/munImpact"
-                android:text="MUN Impact"
-                android:textSize="20sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
+                android:layout_centerHorizontal="true"
                 android:layout_marginStart="80dp"
                 android:layout_marginTop="550dp"
-                android:layout_centerHorizontal="true"/>
+                android:text="MUN Impact"
+                android:textSize="20sp" />
 
             <CheckBox
                 android:id="@+id/munBilbao"
-                android:text="MUN Bilbao"
-                android:textSize="20sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
+                android:layout_centerHorizontal="true"
                 android:layout_marginStart="80dp"
                 android:layout_marginTop="580dp"
-                android:layout_centerHorizontal="true"/>
+                android:text="MUN Bilbao"
+                android:textSize="20sp" />
 
             <CheckBox
                 android:id="@+id/royalRussel"
-                android:text="Royal Russel"
-                android:textSize="20sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
+                android:layout_centerHorizontal="true"
                 android:layout_marginStart="80dp"
                 android:layout_marginTop="610dp"
-                android:layout_centerHorizontal="true"/>
+                android:text="Royal Russel"
+                android:textSize="20sp" />
 
             <CheckBox
                 android:id="@+id/munOther"
-                android:text="Other"
-                android:textSize="20sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
+                android:layout_centerHorizontal="true"
                 android:layout_marginStart="80dp"
                 android:layout_marginTop="640dp"
                 android:onClick="toggleOtherEditText"
-                android:layout_centerHorizontal="true"/>
+                android:text="Other"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/munOtherSpecification"
@@ -136,8 +135,8 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
                 android:hint="What other MUN conferences have you attended?"
-                android:visibility="invisible"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:visibility="invisible" />
 
             <Button
                 android:layout_width="wrap_content"

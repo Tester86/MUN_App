@@ -15,10 +15,6 @@ public class EntryPointActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time_delay);
 
-        Checkout c = new Checkout();
-        c.setKeyID("rzp_test_pNWsybFXTJ1FTP");
-        Checkout.preload(getApplicationContext());
-
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

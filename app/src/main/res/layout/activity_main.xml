@@ -43,7 +43,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="27dp"
                 android:layout_marginBottom="39dp"
-                android:src="@drawable/logo_template"
+                android:src="@drawable/logo"
                 app:civ_border_color="#FF000000"
                 app:civ_border_width="2dp" />
 
@@ -79,7 +79,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/logo_template" />
+                        android:src="@drawable/logo" />
 
                     <TextView
                         android:layout_width="wrap_content"
