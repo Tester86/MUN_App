@@ -89,7 +89,7 @@
             android:layout_alignTop="@+id/foundationPrinciples"
             android:textSize="15sp"
             android:textColor="@color/white"
-            android:text="@string/staff_detailed"
+            android:text="@string/founding_principles_detailed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

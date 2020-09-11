@@ -20,6 +20,7 @@
     </androidx.viewpager.widget.ViewPager>
 
     <ImageView
+        android:contentDescription="@string/scroll_tutorial_on_failed"
         android:id="@+id/scroll_tutorial"
         android:layout_width="200dp"
         android:layout_height="280dp"

@@ -1,11 +1,13 @@
 package com.delta.leadershipmun;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -13,157 +15,201 @@ import android.widget.Toast;
 
 public class BecomeAnAssociateActivity extends AppCompatActivity {
 
-    private EditText organizationName, directorName, directorEmail, goalOfOrganization,
-                    targetAudienceOther, platformOther, detailedPastEvents,
-                    interestFromAssociation;
+    private EditText organizationsName, directorsName, directorsEmail, goalOfOrganization,
+                    targetAudienceOther, interestFromAssociation,
+                    ourBenefitFromAssociation, ideasForAssociation, platformOther,
+                    reasonsForAssociation;
+
+    private String _organizationsName, _directorsName, _directorsEmail, _goalOfOrganization,
+            _targetAudienceOther, _interestFromAssociation,
+            _ourBenefitFromAssociation, _ideasForAssociation, _platformOther,
+            _reasonsForAssociation;
+
+    private RadioGroup targetAudienceRadioGroup;
 
     private RadioButton exampleTargetAudience1Option, exampleTargetAudience2Option,
                         exampleTargetAudience3Option, exampleTargetAudienceOtherOption,
-                        examplePlatform1Option, examplePlatform2Option, examplePlatform3Option,
-                        examplePlatformOtherOption;
+                        ngoOption, businessOption, governmentalAgencyOption,
+                        partnerForWorkshopOption, partnerForPodcastOption, partnerForPresentationOption,
+                        longLastingPartnershipOption, oneTimePartnershipOption;
 
-    private RadioGroup targetAudienceRadioGroup, platformRadioGroup;
+    private CheckBox examplePlatform1Option, examplePlatform2Option, examplePlatform3Option,
+                    examplePlatformOtherOption;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_become_an_associate);
 
-        // Form's EditText elements
-        organizationName = (EditText)findViewById(R.id.organizationNameAssociation);
-        directorName = (EditText)findViewById(R.id.directorNameAssociation);
-        directorEmail = (EditText)findViewById(R.id.directorEmailAssociation);
-        goalOfOrganization = (EditText)findViewById(R.id.goalOfOrganization);
-        targetAudienceOther = (EditText)findViewById(R.id.targetAudienceOther);
-        platformOther = (EditText)findViewById(R.id.platformOther);
-        detailedPastEvents = (EditText)findViewById(R.id.detailedPastEvents);
-        interestFromAssociation = (EditText)findViewById(R.id.interestFromAssociation);
+        // Edit Text
+        organizationsName = (EditText)findViewById(R.id.organizationNameAssociation);
+        directorsName = (EditText)findViewById(R.id.directorNameAssociation);
+        directorsEmail = (EditText)findViewById(R.id.directorEmailAssociation);
 
-        // Form's RadioButton elements
+        goalOfOrganization = (EditText)findViewById(R.id.goalOfOrganization);
+
+        targetAudienceOther = (EditText)findViewById(R.id.targetAudienceOther);
+
+        interestFromAssociation = (EditText)findViewById(R.id.interestFromAssociation);
+        ourBenefitFromAssociation = (EditText)findViewById(R.id.ourBenefitFromAssociation);
+        ideasForAssociation = (EditText)findViewById(R.id.ideasForAssociation);
+
+        platformOther = (EditText)findViewById(R.id.platformOther);
+
+        reasonsForAssociation = (EditText)findViewById(R.id.reasonsForAssociation);
+
+        // RadioGroup
+        targetAudienceRadioGroup = (RadioGroup)findViewById(R.id.targetAudienceRadioGroup);
+
+        // RadioButton
         exampleTargetAudience1Option = (RadioButton)findViewById(R.id.exampleTargetAudience1Option);
         exampleTargetAudience2Option = (RadioButton)findViewById(R.id.exampleTargetAudience2Option);
         exampleTargetAudience3Option = (RadioButton)findViewById(R.id.exampleTargetAudience3Option);
         exampleTargetAudienceOtherOption = (RadioButton)findViewById(R.id.exampleTargetAudienceOtherOption);
-        examplePlatform1Option = (RadioButton)findViewById(R.id.examplePlatform1Option);
-        examplePlatform2Option = (RadioButton)findViewById(R.id.examplePlatform2Option);
-        examplePlatform3Option = (RadioButton)findViewById(R.id.examplePlatform3Option);
-        examplePlatformOtherOption = (RadioButton)findViewById(R.id.examplePlatformOtherOption);
 
-        targetAudienceRadioGroup = (RadioGroup)findViewById(R.id.targetAudience);
-        platformRadioGroup = (RadioGroup)findViewById(R.id.platform);
+        ngoOption = (RadioButton)findViewById(R.id.ngoOption);
+        businessOption = (RadioButton)findViewById(R.id.businessOption);
+        governmentalAgencyOption = (RadioButton)findViewById(R.id.governmentalAgencyOption);
+
+        partnerForWorkshopOption = (RadioButton)findViewById(R.id.partnerForWorkshopOption);
+        partnerForPodcastOption = (RadioButton)findViewById(R.id.partnerForPodcastOption);
+        partnerForPresentationOption = (RadioButton)findViewById(R.id.partnerForPresentationOption);
+
+        longLastingPartnershipOption = (RadioButton)findViewById(R.id.longLastingPartnershipOption);
+        oneTimePartnershipOption = (RadioButton)findViewById(R.id.oneTimePartnershipOption);
+
+        examplePlatform1Option = (CheckBox)findViewById(R.id.examplePlatform1Option);
+        examplePlatform2Option = (CheckBox)findViewById(R.id.examplePlatform2Option);
+        examplePlatform3Option = (CheckBox)findViewById(R.id.examplePlatform3Option);
+        examplePlatformOtherOption = (CheckBox)findViewById(R.id.examplePlatformOtherOption);
+
+
+        examplePlatformOtherOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleOtherEditText();
+            }
+        });
 
         targetAudienceRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(checkedId == exampleTargetAudienceOtherOption.getId()){
-                    if(targetAudienceOther.getVisibility() == View.INVISIBLE) targetAudienceOther.setVisibility(View.VISIBLE);
-                    else targetAudienceOther.setVisibility(View.VISIBLE);
-                } else targetAudienceOther.setVisibility(View.INVISIBLE);
+                if(checkedId == R.id.exampleTargetAudienceOtherOption) targetAudienceOther.setVisibility(View.VISIBLE);
+                else targetAudienceOther.setVisibility(View.INVISIBLE);
             }
         });
+    }
 
-        platformRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(checkedId == examplePlatformOtherOption.getId()){
-                    if(platformOther.getVisibility() == View.INVISIBLE) platformOther.setVisibility(View.VISIBLE);
-                    else platformOther.setVisibility(View.VISIBLE);
-                } else platformOther.setVisibility(View.INVISIBLE);
-            }
-        });
+    private boolean formIsComplete(){
 
+        _organizationsName = organizationsName.getText().toString();
+        _directorsName = directorsName.getText().toString();
+        _directorsEmail = directorsEmail.getText().toString();
 
+        _goalOfOrganization = goalOfOrganization.getText().toString();
+
+        _targetAudienceOther = targetAudienceOther.getText().toString();
+
+        _interestFromAssociation = interestFromAssociation.getText().toString();
+        _ourBenefitFromAssociation = ourBenefitFromAssociation.getText().toString();
+        _ideasForAssociation = ideasForAssociation.getText().toString();
+
+        _platformOther = platformOther.getText().toString();
+
+        _reasonsForAssociation = reasonsForAssociation.getText().toString();
+
+        if(_organizationsName.equals("") || _directorsName.equals("") || _directorsEmail.equals("")) return false;
+
+        if(_goalOfOrganization.equals("")) return false;
+
+        if(_interestFromAssociation.equals("") || _ourBenefitFromAssociation.equals("") || _ideasForAssociation.equals("")) return false;
+
+        if(_reasonsForAssociation.equals("")) return false;
+
+        if(!(exampleTargetAudience1Option.isChecked() || exampleTargetAudience2Option.isChecked()
+            || exampleTargetAudience3Option.isChecked() || (exampleTargetAudienceOtherOption.isChecked() && !targetAudienceOther.getText().toString().equals("")))) return false;
+
+        if(!(ngoOption.isChecked() || businessOption.isChecked() || governmentalAgencyOption.isChecked())) return false;
+
+        if(!(partnerForWorkshopOption.isChecked() || partnerForPodcastOption.isChecked() || partnerForPresentationOption.isChecked())) return false;
+
+        if(!(longLastingPartnershipOption.isChecked() || oneTimePartnershipOption.isChecked())) return false;
+
+        if(!(examplePlatform1Option.isChecked() || examplePlatform2Option.isChecked()
+            || examplePlatform3Option.isChecked() || (examplePlatformOtherOption.isChecked() && !platformOther.getText().toString().equals("")))) return false;
+
+        return true;
 
     }
 
-    public void SubmitAssociationRequest(View v){
+    public void submitAssociationRequest(View v){
 
-        boolean formIsComplete = true;
-
-        String _organizationName = organizationName.getText().toString();
-        String _directorName = directorName.getText().toString();
-        String _directorEmail = directorEmail.getText().toString();
-
-        String _goalOfOrganisation = goalOfOrganization.getText().toString();
-
-        String _targetAudienceOther = targetAudienceOther.getText().toString();
-        String _platformOther = platformOther.getText().toString();
-
-        String _detailedPastEvents = detailedPastEvents.getText().toString();
-        String _interestFromAssociation = interestFromAssociation.getText().toString();
-
-        RadioButton[] targetAudience = {exampleTargetAudience1Option, exampleTargetAudience2Option,
-                                        exampleTargetAudience3Option, exampleTargetAudienceOtherOption};
-
-        RadioButton[] organizationPLatform = {examplePlatform1Option, examplePlatform2Option,
-                                            examplePlatform3Option, examplePlatformOtherOption};
-
-        if(_organizationName.equals("") || _directorName.equals("") || _directorEmail.equals("") || _goalOfOrganisation.equals("") || _detailedPastEvents.equals("") || _interestFromAssociation.equals("")) {
-            Log.e("ERROR: ", "Edit Text left blank");
-            formIsComplete = false;
-        }
-
-        if(!(targetAudience[0].isChecked() || targetAudience[1].isChecked() || targetAudience[2].isChecked() || targetAudience[3].isChecked())){
-            formIsComplete = false; Log.e("ERROR: ", "Target Audience left blank");
-        }
-
-        if(!(organizationPLatform[0].isChecked() || organizationPLatform[1].isChecked() || organizationPLatform[2].isChecked() || organizationPLatform[3].isChecked())){
-            formIsComplete = false;
-        }
-
-        if(exampleTargetAudienceOtherOption.isChecked()){
-            if(_targetAudienceOther.equals("")){
-                formIsComplete = false; Log.e("ERROR: ", "targetAudienceOther blank");
-            }
-
-        }
-
-        if(examplePlatformOtherOption.isChecked()){
-            if(_platformOther.equals("")){
-                formIsComplete = false; Log.e("ERROR: ", "platformOtherOption blank");
-            }
-
-        }
-
-        if(formIsComplete){
-            sendMail();
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-        } else Toast.makeText(this, "All fields must be filled", Toast.LENGTH_LONG).show();
+        if(formIsComplete()) sendMail();
+        else Toast.makeText(getApplicationContext(), "All fields must be filled", Toast.LENGTH_LONG).show();
 
     }
 
     private void sendMail(){
 
+        String finalTargetAudience, finalEntityType, finalAspectToPartnerIn, finalAssociationDuration;
+        String finalPlatforms = "";
+
+        if(exampleTargetAudience1Option.isChecked()) finalTargetAudience = "Example 1";
+        else if(exampleTargetAudience2Option.isChecked()) finalTargetAudience = "Example 2";
+        else if(exampleTargetAudience3Option.isChecked()) finalTargetAudience = "Example 3";
+        else finalTargetAudience = _targetAudienceOther;
+
+        if(ngoOption.isChecked()) finalEntityType = "NGO";
+        else if(businessOption.isChecked()) finalEntityType = "Business";
+        else finalEntityType = "Governmental Agency";
+
+        if(partnerForWorkshopOption.isChecked()) finalAspectToPartnerIn = "Workshop";
+        else if(partnerForPodcastOption.isChecked()) finalAspectToPartnerIn = "Podcast";
+        else finalAspectToPartnerIn = "Presentation";
+
+        if(examplePlatform1Option.isChecked()) finalPlatforms = "   \n- Example 1";
+        if(examplePlatform2Option.isChecked()) finalPlatforms += "   \n- Example 2";
+        if(examplePlatform3Option.isChecked()) finalPlatforms += "   \n- Example 3";
+        if (examplePlatformOtherOption.isChecked()) finalPlatforms += "   \n- " + _platformOther;
+
+        if(longLastingPartnershipOption.isChecked()) finalAssociationDuration = "Long lasting";
+        else finalAssociationDuration = "One time partnership";
+
         String mail = SensitiveInfo.EMAIL;
         String subject = "Association Request";
 
-        String finalTargetAudience;
-        if(exampleTargetAudience1Option.isChecked()) finalTargetAudience = "Example 1 Target Audience";
-        else if(exampleTargetAudience2Option.isChecked()) finalTargetAudience = "Example 2 Target Audience";
-        else if(exampleTargetAudience3Option.isChecked()) finalTargetAudience = "Example 3 Target Audience";
-        else finalTargetAudience = targetAudienceOther.getText().toString();
-
-        String finalPlatform;
-        if(examplePlatform1Option.isChecked()) finalPlatform = "Example 1 Platform";
-        else if(examplePlatform2Option.isChecked()) finalPlatform = "Example 2 Platform";
-        else if(examplePlatform3Option.isChecked()) finalPlatform = "Example 3 Platform";
-        else finalPlatform = platformOther.getText().toString();
-
         String message = "====== Miscellaneous Data ======"
-                + "\n\nOrganization Name: " + organizationName.getText().toString()
-                + "\nDirector's Name: " + directorName.getText().toString()
-                + "\nDirector's Email: " + directorEmail.getText().toString()
+                + "\n\nOrganization Name: " + _organizationsName
+                + "\nDirector's Name: " + _directorsName
+                + "\nDirector's Email: " + _directorsEmail
 
                 + "\n\n====== Info about the Entity ======"
-                + "\n\nTarget Audience: " + finalTargetAudience
-                + "\nPresent in the following platforms: " + finalPlatform
-                + "\n\nGoal of organization:\n\n- " + goalOfOrganization.getText().toString()
-                + "\n\nPrevious events run by the organization (" + organizationName.getText().toString() + "): " + detailedPastEvents.getText().toString()
-                + "\n\nWhy they want to partner with us:\n\n- " + interestFromAssociation.getText().toString();
+                + "\n\nEntity Type: " + finalEntityType
+                + "\nTarget Audience: " + finalTargetAudience
+                + "\nPresent in the platforms: " + finalPlatforms
+                + "\n\nGoal of organization:\n\n- " + _goalOfOrganization
+
+                + "\n\n====== Interests ======"
+                + "\n\nDuration of Association: " + finalAssociationDuration
+                + "\n\nAspect to associate in: " + finalAspectToPartnerIn
+                + "\n\nWhat they want from us:\n\n- " + _interestFromAssociation
+                + "\n\nWhat we can get from this association:\n\n- " + _ourBenefitFromAssociation
+                + "\n\nThe ideas they have for this association:\n\n- " + _ideasForAssociation
+                + "\n\nReason why they want to associate with us:\n\n- " + _reasonsForAssociation;
 
         JavaMailAPI javaMailAPI = new JavaMailAPI(this, mail, subject, message);
+
         javaMailAPI.execute();
 
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+
+    }
+
+    private void toggleOtherEditText(){
+        if(platformOther.getVisibility() == View.INVISIBLE){
+            platformOther.setVisibility(View.VISIBLE);
+        } else platformOther.setVisibility(View.INVISIBLE);
     }
 }

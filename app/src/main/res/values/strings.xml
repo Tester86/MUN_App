@@ -12,7 +12,7 @@
 
     <!-- About Us entry point -->
     <string name="staff">Staff</string>
-    <string name="staff_detailed">Team members, pics\ndescriptions…</string>
+    <string name="staff_detailed">Team members, pics\n and descriptions</string>
     <string name="founding_principles">Founding\nPrinciples</string>
     <string name="founding_principles_detailed">Our visions, goals\nand dynamics</string>
 
@@ -23,6 +23,12 @@
     <!-- Common Forms Fields -->
     <string name="full_name_hint">Full Name</string>
     <string name="gmail_hint">example@gmail.com</string>
+    <string name="organizationsName">Organization\'s Name</string>
+    <string name="directorsName">Director\'s Name</string>
+    <string name="directorsEmail">Director\'s Email</string>
+
+    <!-- Become a Partner Form Fields -->
+
 
     <!-- Join Us Form Fields -->
     <string name="motivation_text">Why are you interested in working with us?</string>
@@ -38,5 +44,8 @@
 
     <!-- Buttons -->
     <string name="btn_submit">Submit</string>
+
+    <!-- ImageView Content Descriptions -->
+    <string name="scroll_tutorial_on_failed">Scroll to see more</string>
 
 </resources>

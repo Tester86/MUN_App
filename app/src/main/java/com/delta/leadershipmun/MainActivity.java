@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void OnClickJoinUs(View v) {
         Intent intent = new Intent(this, JoinUsActivity.class);
-        intent.putExtra("example", "exampleString");
         startActivity(intent);
     }
 
