@@ -173,8 +173,8 @@ public class BecomeAnAssociateActivity extends AppCompatActivity {
         if(examplePlatform3Option.isChecked()) finalPlatforms += "   \n- Example 3";
         if (examplePlatformOtherOption.isChecked()) finalPlatforms += "   \n- " + _platformOther;
 
-        if(longLastingPartnershipOption.isChecked()) finalAssociationDuration = "Long lasting";
-        else finalAssociationDuration = "One time partnership";
+        if(longLastingPartnershipOption.isChecked()) finalAssociationDuration = "Long lasting Association";
+        else finalAssociationDuration = "One time Association";
 
         String mail = SensitiveInfo.EMAIL;
         String subject = "Association Request";
